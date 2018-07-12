@@ -14,8 +14,8 @@ const port = (process.env.PORT || 3000);
 debugger;
 
 //setup static files to be serves on route '/dist' and '/img'
-app.use('/dist', express.static(path.resolve(path.join(__dirname, '..', 'dist'))));
-app.use('/img', express.static(path.resolve(path.join(__dirname, '..', 'img'))))
+app.use('/dist', express.static(path.resolve(path.join(__dirname, 'dist'))));
+app.use('/img', express.static(path.resolve(path.join(__dirname, '..', '..', 'img'))))
 
 debugger;
 

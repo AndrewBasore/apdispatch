@@ -1,5 +1,1 @@
-.data/checks/*.json
-.data/tokens/*.json
-.data/users/*.json
-.logs/*.log
-.logs/*.gz.b64
+/node_modules/
