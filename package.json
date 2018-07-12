@@ -1,0 +1,17 @@
+{
+    "name": "apdispatch",
+    "version": "1.0.0",
+    "description": "Dispatch services for Access Point's flaggers",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "webpack",
+      "start": "node index.js"
+    },
+    "author": "Andrew Basore",
+    "devDependencies": {
+
+    },
+    "dependencies": {
+
+    }
+  }
