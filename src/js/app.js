@@ -10,8 +10,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
 
-import Portfolio from './components/Portfolio';
-import Home from './components/Home/';
+// import Portfolio from './components/Portfolio';
+// import Home from './components/Home/';
 
 import css from "../css/main.scss";
 
@@ -24,15 +24,15 @@ class Layout extends React.Component {
     render(){
         return(
             <div>
-                <div className="header">
-                    <Link className="" to="/portfolio">Portfolio</Link>
-                    <Link className="" to="/">Home</Link>
-                </div>
+                <nav className="header">
+                    <Link to="/"><img  src="img/ap-logo.png"/></Link>
+                    <Link className="" to='/calendar'>Calendar</Link>
+                </nav>
                 <main className="">
                     <div className="page-content">
                         <Switch>
-                            <Route exact path='/' component={Home}/>
-                            <Route path='/portfolio' component={Portfolio}/>
+                            {/* <Route exact path='/' component={Home}/>
+                            <Route path='/portfolio' component={Portfolio}/> */}
                         </Switch>
                     </div>
                 </main>
