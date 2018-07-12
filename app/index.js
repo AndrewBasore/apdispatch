@@ -10,10 +10,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
 
-// import Portfolio from './components/Portfolio';
-// import Home from './components/Home/';
 
-import css from "../css/main.scss";
+import css from "./css/main.scss";
 
 
 //Layout class is a component that governs the layout of our webapp

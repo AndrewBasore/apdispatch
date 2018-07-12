@@ -9,9 +9,9 @@
 
 
 module.exports = {
-    entry: './src/js/app.js',
+    entry: './app',
     output: {
-        path: __dirname + "/src/js/dist/",
+        path: __dirname + "/app/dist/",
         filename: 'bundle.js'
     },
     mode: 'development',
