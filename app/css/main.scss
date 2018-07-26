@@ -3,5 +3,101 @@
 *{
     box-sizing: border-box;
 }
+
+// ===================
+// Font and color variables
+// ===================
+
+// Google Fonts
+// Import Google Font - Raleway 300 & 700
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+
+// Fonts
+$sans-serif: 'Raleway', sans-serif;
+$font-light: 300;
+$font-bold: 700;
+
+// Colors
+$black: #353535;
+$gray: #4f4f4f;
+$medium-gray: #737373;
+$light-gray: #c4c4c4;
+$orange: #F01313;
+$russian-violet: #231651;
+
+$teal: #40798c;
+
+// Semantic color names
+$accent: $teal;
+
+$body-background: $light-gray;
+$menu-background: $teal;
+
+$main-font-color: $russian-violet;
+$menu-active-color: $light-gray;
+$menu-font-color: $medium-gray;
+$link-color: $accent;
+
+//Size variables
+//name some variables
+$header-height: 110px;
+$small-screen: 400px;
+$large-screen: 900px;
+$medium-screen: 600px;
+$face-size: 200px;
+$icon-size: 20px;
+
+
+// ===================
+// General styles
+// ===================
+
+
+//Background color, fonts, enable grid
+body {
+    background-url: 'http://api.thumbr.it/whitenoise-361x370.png?background=c4c4c4ff&noise=de8cde&density=33&opacity=100';
+    color: $main-font-color;
+    font-family: $sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.45;
+    flex-wrap: wrap;
+    justify-items: center;
+    
+}
+
+//Styling for main Header
+h1,{
+    text-shadow: 3px 0px 7px rgba(0, 0, 0, 0.79);
+    justify-items: center;
+    align-items: top;
+    padding: 0 4%;
+    text-align: center;
+    @media(max-width: 440px){
+        font-size: 2.15em;
+        margin: 5% 0;
+        height: 20px; 
+    }
+}
+
+.header{
+    background-image: linear-gradient(to bottom left, #FFC857 0%, #40798C 50%);
+    height: 60px;
+    padding: 10px;
+
+    a{
+        color: $main-font-color;
+        text-decoration: none;
+        font-size: 1.5em;
+        margin-right: 50px;
+        padding-top: 20px;
+    }
+
+    a:active{
+        text-decoration: underline;
+    }
+
+}
+
+//import all other necessary styles
+
 // Entrypoint for SCSS files. All files imported here will be loaded by webpack
-@import './index.scss';
