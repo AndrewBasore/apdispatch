@@ -32,3 +32,5 @@ const reducer = (state=initState, action) =>{
     }
     return newState;
 }
+
+module.exports = reducer;
