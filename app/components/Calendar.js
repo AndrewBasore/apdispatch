@@ -1,11 +1,5 @@
-/*
- * Author: Andrew Basore
- * Layout Component is the main component of the dispatch application.
- * It is composed of a Navbar
- */
 import React from 'react';
-import Navbar from './Navbar.js';
-import Main from './Main.js';
+
 
 //Layout class is a component that governs the layout of our webapp
 module.exports = class Layout extends React.Component {
@@ -15,10 +9,8 @@ module.exports = class Layout extends React.Component {
     render(){
         return(
             <div>
-                <Navbar />
-                <Main />
+                <h1>I am the Calendar, and you cannot edit me to make mistakes! ;-)</h1>
             </div>
         )
     }
 }
-
