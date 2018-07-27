@@ -12,7 +12,7 @@ import rootReducer from './reducers/root.js'
 import {createLogger} from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
 
-import {whoami} from './reducers/auth';
+import {updateTime} from './reducers/calendar';
 
 
 const store = createStore(
@@ -27,4 +27,7 @@ const store = createStore(
 
 export default store
 
-store.dispatch(whoami());
+store.dispatch(updateTime());
+setInterval( () =>{
+  store.dispatch(updateTime());
+}, 1000 * 60)
