@@ -1,15 +1,16 @@
 import React from 'react';
+import store from './../store.js';
 
-
-//Layout class is a component that governs the layout of our webapp
-module.exports = class Layout extends React.Component {
+//Home page shows a greeting, as well as the day
+module.exports = class Home extends React.Component {
     constructor(props){
         super(props);
     }
     render(){
+        const {auth} = store.getState();
         return(
             <div>
-                <h1>This is the Home page! FEEL THE INSPIRATION</h1>
+                <h1>Hello, {auth.user.name || "Stranger"}! </h1>
             </div>
         )
     }
