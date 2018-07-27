@@ -14,6 +14,7 @@ module.exports = class Home extends React.Component {
             <div>
                 <h1>Hello, {auth.user.name || "Stranger"}! </h1>
                 <h2>Today is {calendar.today.dayOfWeek}</h2>
+                <p>Current time: {calendar.today.time.hour}:{calendar.today.time.minutes}</p>
             </div>
         )
     }
