@@ -20,8 +20,12 @@ const initState = {
     user: {}
 }
 
-// Reducer for authentication store
 const AUTHENTICATED= "AUTHENTICATED";
+export const authenticated = user => ({
+    type: AUTHENTICATED, user
+})
+
+// Reducer for authentication store
 const authReducer = (state=initState, action) =>{
     const newState = Object.assign({}, state);
 

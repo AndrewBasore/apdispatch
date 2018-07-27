@@ -13,22 +13,21 @@
 
 // Initial state
 const initState = {
-    allFlaggers: [],
-    selectedFlagger: {}
+    today: new Date().getDay()
 }
 
 // Add flagger action-creator
-const ADD_FLAGGER = "ADD_FLAGGER";
-export const flagAdded = flagger =>({
-    type: ADD_FLAGGER, flagger
+const SUBMIT_SITE = "SUBMIT_SITE";
+export const submitSite = site =>({
+    type: SUBMIT_SITE, site
 })
 
 // Reducer
-const flaggerReducer =  (state=initState, action) =>{
+const calendarReducer =  (state=initState, action) =>{
     const newState = Object.assign({}, state);
 
     switch(action.type){ // @TODO write action constants 
-        case ADD_FLAGGER:
+        case SUBMIT_SITE:
             //Add the flagger to newState here
             break;
         default:
@@ -37,4 +36,4 @@ const flaggerReducer =  (state=initState, action) =>{
     return newState;
 }
 
-export default flaggerReducer;
+export default calendarReducer;
