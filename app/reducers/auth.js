@@ -20,7 +20,13 @@ const initState = {
     user: {}
 }
 
-const reducer = (state=initState, action) =>{
+const AUTHENTICATED= "AUTHENTICATED";
+export const authenticated = user => ({
+    type: AUTHENTICATED, user
+})
+
+// Reducer for authentication store
+const authReducer = (state=initState, action) =>{
     const newState = Object.assign({}, state);
 
     switch(action.type){ // @TODO write action constants 
@@ -32,3 +38,12 @@ const reducer = (state=initState, action) =>{
     }
     return newState;
 }
+
+export const whoami = () =>
+    dispatch =>{
+        // Make Request to server to get user info
+
+        // Dispatch that data to authenticated
+    }
+
+export default authReducer;

@@ -8,9 +8,11 @@
  // Dependencies
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import rootReducer from './reducers'
-import createLogger from 'redux-logger'
+import rootReducer from './reducers/root.js'
+import {createLogger} from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
+
+import {whoami} from './reducers/auth';
 
 
 const store = createStore(
@@ -24,3 +26,5 @@ const store = createStore(
 )
 
 export default store
+
+store.dispatch(whoami());
