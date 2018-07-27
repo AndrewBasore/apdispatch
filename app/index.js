@@ -10,7 +10,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import Layout from './components/Layout';
+import {connect, Provider} from 'react-redux';
 
+// Store handles all state management
+import store from './store.js';
 
 import css from "./css/main.scss";
 
@@ -19,8 +22,10 @@ import css from "./css/main.scss";
 
 //Connect Layout with BrowserRouter and render it out to div#app
 ReactDOM.render((
-    <BrowserRouter>
-        <Layout />
-    </BrowserRouter>
+    <Provider store={store}>
+        <BrowserRouter>
+            <Layout />
+        </BrowserRouter>
+    </Provider>
    
 ), document.getElementById('app'));
