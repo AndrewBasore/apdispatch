@@ -28,7 +28,6 @@ const calendarReducer =  (state=initState, action) =>{
 
     switch(action.type){ // @TODO write action constants 
         case SUBMIT_SITE:
-            //Add the flagger to newState here
             break;
         default:
             return state;
