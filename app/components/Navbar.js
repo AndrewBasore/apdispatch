@@ -9,6 +9,7 @@
 // Dependencies
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Time from './Time.js';
 
 
 // Export the component
@@ -19,8 +20,8 @@ module.exports = class Navbar extends React.Component{
     render(){
         return(
             <nav className="header">
-                <Link to="/"><img  src="img/ap-logo.png"/></Link>
-                <Link className="" to='/calendar'>Calendar</Link>
+                <Link to="/"><Time /><img  src="img/ap-logo.png"/></Link>
+                <Link className="" to='/calendar'> Calendar</Link>
                 <Link className="" to='/flaggers'>Flaggers</Link>
                 <Link className="" to='/map'>Map</Link>
             </nav>

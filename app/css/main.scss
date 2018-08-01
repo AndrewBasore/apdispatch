@@ -101,3 +101,4 @@ h1,{
 //import all other necessary styles
 
 // Entrypoint for SCSS files. All files imported here will be loaded by webpack
+@import './time-display.scss';
