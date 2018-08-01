@@ -1,4 +1,5 @@
 import React from 'react';
+import Time from './Time.js';
 
 
 //Layout class is a component that governs the layout of our webapp
