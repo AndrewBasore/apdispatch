@@ -10,7 +10,7 @@ module.exports = class Layout extends React.Component {
     render(){
         return(
             <div>
-                <h1>This is the Home page! FEEL THE INSPIRATION</h1>
+                <h1>This is the Home page! FEEL THE INSPIRATION RRREEEEE</h1>
             </div>
         )
     }

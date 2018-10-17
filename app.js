@@ -11,13 +11,13 @@ const path = require('path')
 //Listens on port 3000
 const port = (process.env.PORT || 3000);
 
-debugger;
+
 
 //setup static files to be serves on route '/dist' and '/img'
-app.use('/dist', express.static(path.resolve(path.join(__dirname, '..','dist'))));
-app.use('/img', express.static(path.resolve(path.join(__dirname, '..', '..', 'img'))))
+app.use('/dist', express.static(path.resolve(path.join(__dirname, 'app', 'dist'))));
+app.use('/img', express.static(path.resolve(path.join(__dirname, 'img'))))
 
-debugger;
+console.log("Hello world!");
 
 // /projects route sends back JSON of Projects array
 app.get('/projects', (req, res) =>{
@@ -25,7 +25,6 @@ app.get('/projects', (req, res) =>{
   res.json(result);
 })
 
-debugger;
 
 // Send index.html for anything else.
 app.get('/*', (req, res, next) => {
@@ -37,10 +36,11 @@ app.get('/*', (req, res, next) => {
   // console.log(urlExtension);
   // If request is for a path, send index.html. Otherwise, continue in middleware
   if(!urlExtension){
-    res.sendFile(path.resolve(path.join(__dirname, '..','..', 'index.html')));
+    console.log("waddup")
+    res.sendFile(path.resolve(path.join(__dirname, 'index.html')));
   }else {
     console.log(path.resolve(__dirname,'dist',url));
-    res.sendFile(path.resolve(__dirname, 'dist',url));
+    res.sendFile(path.resolve(__dirname, 'app', 'dist',url));
   }
 
 });
