@@ -8,16 +8,19 @@ const express = require('express');
 const app = express();
 const path = require('path')
 
+const database = require('./db')
+
+database.initializeMongo();
+
 //Listens on port 3000
 const port = (process.env.PORT || 3000);
 
 
 
 //setup static files to be serves on route '/dist' and '/img'
-app.use('/dist', express.static(path.resolve(path.join(__dirname, 'app', 'dist'))));
-app.use('/img', express.static(path.resolve(path.join(__dirname, 'img'))))
+app.use('/public', express.static(path.resolve(path.join(__dirname, 'static'))));
 
-console.log("Hello world!");
+
 
 // /projects route sends back JSON of Projects array
 app.get('/projects', (req, res) =>{
@@ -26,25 +29,21 @@ app.get('/projects', (req, res) =>{
 })
 
 
-// Send index.html for anything else.
-app.get('/*', (req, res, next) => {
-  // Check to see if request is for a resource. Split originalUrl and split on '.'
-  const url = req.originalUrl;
-  const arr = url.split('.');
-  const urlExtension = typeof(arr[1]) == 'string' && arr[1].trim().length > 0 ? arr[1].trim() : false;
 
-  // console.log(urlExtension);
-  // If request is for a path, send index.html. Otherwise, continue in middleware
-  if(!urlExtension){
-    console.log("waddup")
-    res.sendFile(path.resolve(path.join(__dirname, 'index.html')));
-  }else {
-    console.log(path.resolve(__dirname,'dist',url));
-    res.sendFile(path.resolve(__dirname, 'app', 'dist',url));
-  }
 
-});
+app.get('/testFind', (req, res) =>{
+  database.addRandomCat()
 
-debugger;
+  database.Kitten.find( (err, kittens) =>{
+    if(err) return res.error(err);
+    console.log(kittens);
+    res.json(kittens)
+  })
+})
+
+
+app.get('/', (req, res, next) => {
+  res.sendFile(path.resolve(__dirname, 'static', 'index.html'));
+})
 
 app.listen(port, () => console.log("listening on port ", port))

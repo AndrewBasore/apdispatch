@@ -20,7 +20,7 @@ module.exports = class Navbar extends React.Component{
     render(){
         return(
             <nav className="header">
-                <Link to="/"><Time /><img  src="img/ap-logo.png"/></Link>
+                <Link to="/"><Time /><img  src="/public/img/ap-logo.png"/></Link>
                 <Link className="" to='/calendar'> Calendar</Link>
                 <Link className="" to='/flaggers'>Flaggers</Link>
                 <Link className="" to='/map'>Map</Link>
