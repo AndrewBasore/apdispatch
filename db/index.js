@@ -6,6 +6,7 @@ const DATABSE_CONNECTION = 'mongodb://db/test';
 // Create models from Schema
 Kitten = exports.Kitten = mongoose.model('Kitten', require('./schema/kitty.js'));
 Flagger = exports.Flagger = mongoose.model('Flagger', require('./schema/flagger.js'));
+Site = exports.Site = mongoose.model("Site", require('./schema/site.js'));
 
 exports.initializeMongo = () =>{
     mongoose.connect(DATABSE_CONNECTION);

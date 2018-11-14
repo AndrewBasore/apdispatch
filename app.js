@@ -28,7 +28,9 @@ app.get('/projects', (req, res) =>{
   res.json(result);
 })
 
-
+app.post('/flaggers/add', (req, res) =>{
+  
+})
 
 
 app.get('/testFind', (req, res) =>{
